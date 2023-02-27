@@ -1,0 +1,93 @@
+*{
+  box-sizing: border-box;
+}
+
+main{
+  padding: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+}
+
+a{
+  text-decoration: none;
+  color:grey;
+}
+a .logo{
+  font-weight: bolder;
+}
+a:hover{
+  color:black;
+}
+nav{
+  display:flex;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+  img{
+    width: 40%;
+    height: 40%;
+  }
+
+  form{
+    max-width: 500px;
+  }
+
+  input{
+  display: block;
+  width: 100%;
+  padding: 5px 6px;
+  margin-bottom: 5px;
+  border-radius: solid 5px black;
+
+}
+
+button{
+  width: 100%;
+}
+
+.login .register  h2{
+ text-align: center;
+}
+
+.file{
+
+  border: solid 0.2px black;
+}
+
+ .post{
+  margin-top: 10px;
+}
+
+.createpost{
+  margin-top: 15px;
+}
+
+.edit-row{
+  text-align: center;
+ margin: 20px;
+}
+
+.edit-btn{
+  border: solid 2px;
+  background-color: #333;
+  border-radius: 5px;
+  color:white;
+  padding: 10px;
+}
+
+
+
+.del-btn{
+ margin-left: 5px;
+  border: solid 2px;
+  background-color: #333;
+  border-radius: 5px;
+  color:white;
+  padding: 10px;
+}
