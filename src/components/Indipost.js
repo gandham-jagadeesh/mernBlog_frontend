@@ -4,7 +4,7 @@ import {useParams } from "react-router-dom";
 import { UserContext } from "../UserContext";
 export default function Indipost(){
  const [single,setsingle] = useState(null);
- const {user} = useContext(UserContext);
+ const {user,setusername} = useContext(UserContext);
  const {id} = useParams();
  useEffect(()=>{
     async function singleposts(){
@@ -14,14 +14,22 @@ export default function Indipost(){
     }
     singleposts();
  },[id])
- 
-console.log(single);
- 
+ useEffect(()=>{
+  async function loggedin(){
+ const response =  await fetch("http://localhost:4000/profile",{
+    credentials:'include'
+  })
+  const data   = await response.json();
+  setusername(data);
+  }
+  loggedin();
+ },[setusername])
+ console.log()
  if(!single){
    return ''
  }
  return (
-   <div class="postpage">
+   <div className="postpage">
    <h2>{single.title}</h2>
     <p>Author : {single.author.username}</p>
    {user.id === single.author._id && (
