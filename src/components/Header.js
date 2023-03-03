@@ -5,7 +5,7 @@ function Headers(){
   const {user,setusername} = useContext(UserContext);
  useEffect(()=>{
   async function loggedin(){
- const response =  await fetch("http://localhost:4000/profile",{
+ const response =  await fetch(process.env.REACT_APP_API_URL+"/profile",{
     credentials:'include'
   })
   const data   = await response.json();
@@ -14,7 +14,7 @@ function Headers(){
   loggedin();
  },[setusername])
   function Logout(){
-  fetch("http://localhost:4000/logout",{
+  fetch(process.env.REACT_APP_API_URL+"/logout",{
     credentials:'include',
     method:'POST'
   });
