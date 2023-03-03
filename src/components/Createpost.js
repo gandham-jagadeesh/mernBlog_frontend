@@ -35,7 +35,7 @@ async  function posthandler(e){
   userpostdata.append('summary',summary);
   userpostdata.append('file',file[0]);
   userpostdata.append('content',content);
- const response = await fetch(process.env.REACT_APP_API_URL+"/post",{
+ const response = await fetch(process.env.REACT_APP_API_URL+"post",{
     method:"POST",
     body:userpostdata,
     credentials:'include' 

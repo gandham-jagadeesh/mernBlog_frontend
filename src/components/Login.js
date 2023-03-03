@@ -12,7 +12,8 @@ function Login(){
 
  async function handler(e){
  e.preventDefault();
-const response =  await fetch(process.env.REACT_APP_API_URL+'/login',{
+ console.log(process.env.REACT_APP_API_URL);
+const response =  await fetch(process.env.REACT_APP_API_URL+'login',{
     method:'POST',
     body:JSON.stringify({username,password}),
     headers:{'Content-Type':'application/json'},

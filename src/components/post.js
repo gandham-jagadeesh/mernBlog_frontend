@@ -4,7 +4,7 @@ function  Post(){
  const [posts,setposts]=useState([]);
  useEffect(()=>{
  async function allposts(){
-      const userposts = await fetch(process.env.REACT_APP_API_URL+"/posts");
+      const userposts = await fetch(process.env.REACT_APP_API_URL+"posts");
       const posts_ = await userposts.json();
       setposts(posts_);
 }

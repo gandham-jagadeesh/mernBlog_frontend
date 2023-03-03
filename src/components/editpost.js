@@ -11,7 +11,7 @@ export default function Editpost(){
     const  [redirect,setredirect]  = useState(false);
     useEffect(()=>{
         async function singleposts(){
-           const response =  await fetch(`${process.env.REACT_APP_API_URL}/${id}`);
+           const response =  await fetch(`${process.env.REACT_APP_API_URL}${id}`);
            const docs     = await response.json();
           settitle(docs.title);
           setsummary(docs.summary);
