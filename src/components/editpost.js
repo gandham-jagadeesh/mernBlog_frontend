@@ -11,7 +11,8 @@ export default function Editpost(){
     const  [redirect,setredirect]  = useState(false);
     useEffect(()=>{
         async function singleposts(){
-           const response =  await fetch(`${process.env.REACT_APP_API_URL}${id}`);
+           const response =  await fetch(`${process.env.REACT_APP_API_URL}post/${id}`);
+           console.log(response);
            const docs     = await response.json();
           settitle(docs.title);
           setsummary(docs.summary);
@@ -50,7 +51,7 @@ async function edithandler(ev){
     userpostdata.append('file',file[0]);
     }
     userpostdata.append('content',content);
-   const response =  await fetch(process.env.REACT_APP_API_URL+"/post",{
+   const response =  await fetch(process.env.REACT_APP_API_URL+"post",{
         method:'PUT',
         body:userpostdata,
         credentials:'include',

@@ -11,7 +11,7 @@ return (
 <div className="entry">
 <div className="pics">
 <Link to={`posts/${_id}`} className="post image">
-<img src={+cover} alt="some random "/> 
+<img src={"http://localhost:4000/"+cover} alt="some random "/> 
 </Link>
 </div>
 <Link to={`posts/${_id}`} className="title post">

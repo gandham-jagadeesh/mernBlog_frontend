@@ -2,7 +2,9 @@ import { Link, Outlet } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { UserContext } from "../UserContext";
 function Headers(){
+
   const {user,setusername} = useContext(UserContext);
+
  useEffect(()=>{
   async function loggedin(){
  const response =  await fetch(process.env.REACT_APP_API_URL+"profile",{
@@ -10,11 +12,13 @@ function Headers(){
   })
   const data   = await response.json();
   setusername(data);
-  }
+}
   loggedin();
  },[setusername])
+
+ 
   function Logout(){
-  fetch(process.env.REACT_APP_API_URL+"/logout",{
+  fetch(process.env.REACT_APP_API_URL+"logout",{
     credentials:'include',
     method:'POST'
   });

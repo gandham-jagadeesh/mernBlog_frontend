@@ -13,6 +13,8 @@ function Register(){
      });
     if(response.status === 200){
         alert("registration sucessful");
+        setname('');
+        setpass('');
     }
     else{
         alert("registration failed");

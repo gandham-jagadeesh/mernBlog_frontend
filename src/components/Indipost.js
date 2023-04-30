@@ -8,12 +8,13 @@ export default function Indipost(){
  const {id} = useParams();
  useEffect(()=>{
     async function singleposts(){
-       const response =  await fetch(`${process.env.REACT_APP_API_URL}${id}`);
+       const response =  await fetch(`${process.env.REACT_APP_API_URL}post/${id}`);
        const docs     = await response.json();
        setsingle(docs);
     }
     singleposts();
  },[id])
+ 
  useEffect(()=>{
   async function loggedin(){
  const response =  await fetch(process.env.REACT_APP_API_URL+"profile",{
