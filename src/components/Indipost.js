@@ -40,7 +40,7 @@ export default function Indipost(){
    )
     }
    <div className="pic_indpost" alt="color">
-   <img src={`http://localhost:4000/${single.cover}` } className="Indpost" alt={"why not"} ></img>
+    <img src={`${process.env.REACT_APP_API_URL}/${single.cover}` } className="Indpost" alt={"why not"} ></img>
    </div>
    <p>{single.summary}</p>
    <div dangerouslySetInnerHTML={{__html:single.content}}/>
